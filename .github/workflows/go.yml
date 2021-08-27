@@ -8,10 +8,10 @@ on:
   workflow_dispatch:
   
 jobs:
-    runs-on: ubuntu-latest
-
   Setup:
+    runs-on: ubuntu-latest
     steps:
+    - name: Checkout step
     - uses: actions/checkout@v2
 
     - name: Set up Go
@@ -21,10 +21,10 @@ jobs:
   
   Build:
     steps:
-    - name: Build
+    - name: Build Step
       run: go build -v ./...
 
   Test:
     steps:
-    - name: Test
+    - name: Test Step
       run: go test -v ./...
