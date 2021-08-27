@@ -24,7 +24,7 @@ jobs:
         run: go build -v ./...
 
       - name: Get gotestsum tooling
-        run: go get gotest.tools/gotestsum
+        run: go install gotest.tools/gotestsum@latest
 
       - name: Run gotestsum to generate JUnit XML file
         run: gotestsum --junitfile unit-tests.xml
@@ -33,7 +33,7 @@ jobs:
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed
         with:
-          name: Go Tests            # Name of the check run which will be created
+          name: Go Test Results            # Name of the check run which will be created
           path: ./unit-tests.xml    # Path to test results
           reporter: java-junit        # Format of test results
           
