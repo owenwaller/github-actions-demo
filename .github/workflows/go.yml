@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
   
 jobs:
-
-  build:
     runs-on: ubuntu-latest
+
+  Setup:
     steps:
     - uses: actions/checkout@v2
 
@@ -18,9 +18,13 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.17
-
+  
+  Build:
+    steps:
     - name: Build
       run: go build -v ./...
 
+  Test:
+    steps:
     - name: Test
       run: go test -v ./...
