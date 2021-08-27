@@ -8,23 +8,20 @@ on:
   workflow_dispatch:
   
 jobs:
-  Setup:
-    runs-on: ubuntu-latest
-    steps:
+  go-build-and-test-job:
+  name: Go build and test job
+  runs-on: ubuntu-latest  
+  steps:
     - name: Checkout step
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
 
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
         go-version: 1.17
   
-  Build:
-    steps:
     - name: Build Step
       run: go build -v ./...
 
-  Test:
-    steps:
     - name: Test Step
       run: go test -v ./...
