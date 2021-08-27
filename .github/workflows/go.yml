@@ -23,9 +23,6 @@ jobs:
       - name: Build Step
         run: go build -v ./...
 
-      - name: Test Step
-        run: go test -v ./...
-
       - name: Get gotestsum tooling
         run: go get gotest.tools/gotestsum
 
