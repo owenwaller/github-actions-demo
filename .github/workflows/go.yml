@@ -27,7 +27,7 @@ jobs:
         run: go install gotest.tools/gotestsum@latest
 
       - name: Run gotestsum to generate JUnit XML file
-        run: gotestsum --junitfile unit-tests.xml
+        run: go test -json | gotestsum --junitfile ./unit-tests.xml
 
       - name: Test Report
         uses: dorny/test-reporter@v1
