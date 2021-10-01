@@ -6,7 +6,7 @@ The test code contains a mix of passing and failing tests.
 
 Objective:
 
-- [ ] Can we build and test go code automatically on a github push (or pull request)?
+- [*] Can we build and test go code automatically on a github push (or pull request)?
 - [ ] Can we drill down to see the test failures?
 - [ ] Does the build abort on the first failure?
 - [ ] Can we display the test results inside Github?
